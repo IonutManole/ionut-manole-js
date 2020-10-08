@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>Calculator suprafete</title>
+</head>
+
+<body>
+  <form action="/">
+    <fieldset>
+      <legend>Calculator suprafata dreptunghi</legend>
+
+      <label for="length">Lungime: </label>
+      <input
+        type="number"
+        id="length"
+        name="length"
+        placeholder="Lungime"
+      >
+
+      <br> <br>
+
+      <label for="width">Latime: </label>
+      <input
+        type="number"
+        name="width"
+        id="width"
+        placeholder="Latime"
+      >
+
+      <br> <br>
+
+      <label for="height">Inaltime: </label>
+
+      <input
+        type="number"
+        name="height"
+        id="height"
+        placeholder="Inaltime"
+      >
+
+      <br> <br>
+
+      <label for="radius">Raza: </label>
+
+      <input
+        type="number"
+        name="radius"
+        id="radius"
+        placeholder="Raza"
+      >
+
+      <br> <br>
+
+      <button type="submit">Calculeaza</button>
+
+      <p>Rezultat: <span id="result"></span></p>
+      <p>Volum sfera: <span id="result-volume"></span></p>
+      <p>Suprafata sfera: <span id="result-surface"></span></p>
+    </fieldset>
+  </form>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
