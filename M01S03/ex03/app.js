@@ -62,3 +62,13 @@ console.log(
 // Folosind obiectul Andra afiseaza numarul total de caractere
 // al numelui complet al lui Dragos.
 console.log((andra.friends.ionut.name + andra.friends.ionut.surname).length);
+
+// Afiseaza numele complet al lui Dragos folosind obiectul Larry.
+console.log(
+  `${larry.friends.steven.friends.ionut.name} ${larry.friends.steven.friends.ionut.surname}`,
+);
+
+// Afiseaza numele complet a lui Larry folosind obiectul Dragos.
+console.log(
+  `${ionut.friends.steven.friends.larry.name} ${ionut.friends.steven.friends.larry.surname}`,
+);
