@@ -1,4 +1,5 @@
 var messageParagraph = document.getElementById('message');
+var secondMessageParagraph = document.getElementById('message2');
 var value = window.prompt('Introdu o valoare: ');
 // var isOdd = false;
 
@@ -25,3 +26,21 @@ var message = `Valoarea este ${value} si este ${word}.`;
 
 messageParagraph.innerText = message;
 // messageParagraph.textContent = message;
+
+// Tema
+// Folosind metoda prompt() afiseaza in pagina mesajul:
+// “Numarul introdus este mai mic | mai mare decat 20.”
+let word2 = 'mai mic';
+
+if (value < 20 && !isNaN(value) && parseInt(value) !== null) {
+  word2 = 'mai mic';
+} else if (value > 20 && !isNaN(value) && parseInt(value) !== null) {
+  word2 = 'mai mare';
+} else if (value === 20 && !isNaN(value) && parseInt(value) !== null) {
+  word2 = 'egal';
+} else {
+  word2 = 'incorect input';
+}
+let message2 = `Numarul introdus este ${word2} decat 20`;
+
+secondMessageParagraph.textContent = message2;
