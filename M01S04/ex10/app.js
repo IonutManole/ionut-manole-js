@@ -126,8 +126,8 @@ console.log(sentence);
 console.warn(`
 Folosind metoda reverse si apoi forEach, afiseaza in ordine inversa elementele arrayului skills.
 `);
-person.skills.reverse();
-person.skills.forEach((skill) => {
-  console.log(skill);
+// person.skills.reverse();
+person.skills.forEach((skill, i, skills) => {
+  console.log(skills[skills.length - 1 - i]);
 });
-person.skills.reverse();
+// person.skills.reverse();
