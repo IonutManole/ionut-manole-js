@@ -127,3 +127,19 @@ console.warn(
 for (let i = skillsLength - 1; i >= 0; i--) {
   console.log(person.skills[i]);
 }
+
+console.warn(`
+  Folosind obiectul person si un for, afiseaza in consola skillurile pe care le are persoana
+`);
+for (let i = 0; i < person.skills.length; i++) {
+  console.log(person.skills[i]);
+}
+
+console.warn(`
+  In mod similar, afiseaza skillurile care incep cu c
+`);
+for (let i = 0; i < person.skills.length; i++) {
+  if (person.skills[i].startsWith('c')) {
+    console.log(person.skills[i]);
+  }
+}
