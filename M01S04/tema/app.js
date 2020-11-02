@@ -119,7 +119,7 @@ console.warn(`
   si ceilalti membri.
   Poti folosi metoda pentru a converti numerele negative in pozitive.
 `);
-let person = {
+let person2 = {
   name: 'Ionut',
   surname: 'Manole',
   age: 32,
@@ -152,3 +152,23 @@ let person = {
     },
   ],
 };
+
+for (let i = 0; i < person2.friends.length; i++) {
+  let outerFriend = person2.friends[i];
+  let ageDiff = Math.abs(outerFriend.age - person2.age);
+
+  console.log(`
+    Intre ${outerFriend.name} si ${person2.name} este o diferenta de ${ageDiff} ani.
+  `);
+
+  for (let j = 0; j < person2.friends.length; j++) {
+    let innerFriend = person2.friends[j];
+    let ageDiff = Math.abs(outerFriend.age - innerFriend.age);
+
+    if (i !== j) {
+      console.log(`
+        Intre ${outerFriend.name} si ${innerFriend.name} este o diferenta de  ${ageDiff} ani.
+      `);
+    }
+  }
+}
