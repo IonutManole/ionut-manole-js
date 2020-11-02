@@ -83,3 +83,46 @@ for (let i = 0; i < friendsKeysArray.length; i++) {
     `${friendObject.name} este ${sentenceFragment} decat ${person.name}`,
   );
 }
+
+console.warn(`
+Folosind Object.keys() pe proprietatea skills, afiseaza abilitatile persoanei.
+`);
+Object.keys(person.skills).forEach((skill) => {
+  console.log(skill);
+});
+
+console.warn(`
+Prin aceeasi metoda, afiseaza o lista cu numele complet al prietenilor.
+`);
+Object.keys(person.friends).forEach((friend) => {
+  let friendObject = person.friends[friend];
+  console.log(`${friendObject.name} ${friendObject.surname}`);
+});
+
+console.warn(`
+Afiseaza propozitia: “Prietenii mei sunt Larry Larryson, Steven Stevenson si Carol Carolson.” folosind Object.keys()
+`);
+let sentence2 = 'Prietenii mei sunt ';
+for (let i = 0; i < friendsKeysArray.length; i++) {
+  let friendObject = person.friends[friendsKeysArray[i]];
+  let punctuation = ', ';
+
+  if (i === friendsKeysArray.length - 1) {
+    punctuation = '.';
+  }
+
+  if (i === friendsKeysArray.length - 2) {
+    punctuation = ' si ';
+  }
+
+  sentence2 += `${friendObject.name} ${friendObject.surname}${punctuation}`;
+}
+console.log(sentence2);
+
+console.warn(`
+Folosind bucla, afiseaza mai multe propozitii (cate una per console.log()) care sa afiseze: “Larry are xx ani. Steven are …”
+`);
+for (let i = 0; i < friendsKeysArray.length; i++) {
+  let friendObject = person.friends[friendsKeysArray[i]];
+  console.log(`${friendObject.name} are ${friendObject.age} ani.`);
+}
