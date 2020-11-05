@@ -49,7 +49,7 @@ let aggregateSurfaceArea = (L1, l1, L2, l2) => {
   let rectangleArea1 = calculateRectangleArea(L1, l1);
   let rectangleArea2 = calculateRectangleArea(L2, l2);
 
-  return rectangleArea1, rectangleArea2;
+  return rectangleArea1 + rectangleArea2;
 };
 
 console.warn(`
