@@ -9,7 +9,9 @@ class Vehicle {
   }
 
   displaySpeed() {
-    console.log(`Viteza curenta este: ${this.speed}`);
+    console.log(`
+      Viteza curenta a vehiculului ${this.make} este: ${this.speed}
+    `);
   }
 
   getSpeed(format) {
@@ -34,19 +36,12 @@ class Vehicle {
   setSpeed(speed) {
     if (speed > this.topSpeed) {
       this.speed = this.topSpeed;
-
-      this.displaySpeed();
-      return;
-    }
-
-    if (speed < this.topReverseSpeed) {
+    } else if (speed < this.topReverseSpeed) {
       this.speed = this.topReverseSpeed;
-
-      this.displaySpeed();
-      return;
+    } else {
+      this.speed = speed;
     }
 
-    this.speed = speed;
     this.displaySpeed();
   }
 }
@@ -116,3 +111,7 @@ trike.setSpeed(-10);
 let audi = new Car('Audi', 'blue', 3, 140, -3);
 audi.setSpeed(140);
 audi.accelerate();
+
+// Tema
+// refactor setSpeed pentru a functiona cu if else si modificarea metodei
+// displaySpeed astfel incat sa spuna Viteza curent a vehiculului "make" este:
