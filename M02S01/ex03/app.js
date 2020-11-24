@@ -5,6 +5,7 @@ let Car = {
   speed: 0,
   topSpeed: 100,
   topReverseSpeed: -50,
+  areLightsOn: false,
   displaySpeed: function () {
     console.log(`
       Vehiculul ${this.make} se deplasa cu viteza ${this.speed}km/h.
@@ -27,9 +28,15 @@ let Car = {
 
     this.displaySpeed();
   },
+  turnLightsOn: function () {
+    this.areLightsOn = true;
+  },
+  turnLightsOff: function () {
+    this.areLightsOn = false;
+  },
   flashLights: function () {
     this.turnLightsOn();
-    setTimeout(turnLightsOff, 3000);
+    setTimeout(this.turnLightsOff, 3000);
   },
 };
 

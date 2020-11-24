@@ -66,6 +66,14 @@ class Car {
 
     document.body.append(this.frame);
   }
+  // brakes
+  engageBreak() {
+    this.lightBack.classList.add('light--on');
+  }
+
+  disengageBreak() {
+    this.lightBack.classList.remove('light--on');
+  }
 }
 
 let car = new Car();
