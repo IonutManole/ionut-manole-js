@@ -1,15 +1,32 @@
 const controls = document.querySelector('.controls');
 const hero = document.querySelector('.hero');
+const heroDimensions = hero.getBoundingClientRect();
+const stage = document.querySelector('.stage');
+const stageDimensions = stage.getBoundingClientRect();
 const heroPosition = {
   left: 0,
   top: 0,
 };
+const boundaryRight = stageDimensions.width - heroDimensions.width;
+const boundaryBottom = stageDimensions.height - heroDimensions.height;
 
 const moveHero = (axis = 'x', normalizedDirection = 'fw') => {
   let step = normalizedDirection === 'fw' ? 30 : -30;
   let cssProperty = axis === 'x' ? 'left' : 'top';
 
   heroPosition[cssProperty] += step;
+
+  if (heroPosition[cssProperty] <= 0) {
+    heroPosition[cssProperty] = 0;
+  }
+
+  if (axis === 'x' && heroPosition[cssProperty] >= boundaryRight) {
+    heroPosition[cssProperty] = boundaryRight;
+  }
+
+  if (axis === 'y' && heroPosition[cssProperty] >= boundaryBottom) {
+    heroPosition[cssProperty] = boundaryBottom;
+  }
 
   hero.style.left = `${heroPosition.left}px`;
   hero.style.top = `${heroPosition.top}px`;
@@ -48,4 +65,28 @@ controls.addEventListener('click', (event) => {
     default:
       break;
   }
+});
+
+window.addEventListener('keydown', (event) => {
+  let axis = 'x';
+  let normalizedDirection = 'fw';
+
+  switch (event.code) {
+    case 'ArrowRight':
+      break;
+    case 'ArrowDown':
+      axis = 'y';
+      break;
+    case 'ArrowLeft':
+      axis = 'x';
+      normalizedDirection = 'bk';
+      break;
+    case 'ArrowUp':
+      axis = 'y';
+      normalizedDirection = 'bk';
+    default:
+      break;
+  }
+
+  moveHero(axis, normalizedDirection);
 });
