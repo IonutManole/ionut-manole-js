@@ -20,7 +20,7 @@
   />
 </head>
 
-<body>
+<body class="monochrome-lookbook">
   <header class="header">
     <div class="img-cover">
       <div class=" user-navigation">
@@ -204,7 +204,10 @@
       This way we can customize your watch on your needs.
     </p>
 
-    <form action="/">
+    <form
+      action="/"
+      class="form-lookbook"
+    >
       <h2>1.Choose one</h2>
 
       <div class="pretty p-default p-round">
@@ -245,17 +248,21 @@
 
 
       <h2>2.What model do you preffer?</h2>
-      <select
-        name="model"
-        id="model"
-        class="model"
-      >
-        <option value="laBohemePetite">LA BOHEME PETITE</option>
-        <option value="laBoheme">LA BOHEME</option>
-        <option value="triomphe">TRIOMPHE</option>
-        <option value="laBohemePetite">LA BOHEME PETITE</option>
-        <option value="leCournnement">LE COURONNEMENT</option>
-      </select>
+      <div class="form-group">
+        <select
+          name="model"
+          id="model"
+          class="model form-control"
+          required
+        >
+          <option value="">--select--</option>
+          <option value="laBohemePetite">LA BOHEME PETITE</option>
+          <option value="laBoheme">LA BOHEME</option>
+          <option value="triomphe">TRIOMPHE</option>
+          <option value="laBohemePetite">LA BOHEME PETITE</option>
+          <option value="leCournnement">LE COURONNEMENT</option>
+        </select>
+      </div>
 
       <div class="image">
         <img
@@ -265,24 +272,30 @@
       </div>
 
       <h2>3. Please give us the size of your wrist</h2>
-      <input
-        type="text"
-        name="size"
-        id="size"
-        class="size-input"
-        placeholder="write your measuring in cm"
-        required
-      >
+      <div class="form-group">
+        <input
+          type="number"
+          name="size"
+          id="size"
+          class="size-input form-control"
+          placeholder="write your measuring in cm"
+          required
+        >
+      </div>
 
       <h2>4. Gravation on the back</h2>
-      <input
-        type="text"
-        name="gravation"
-        id="gravation"
-        class="size-input"
-        placeholder="write 10 characters max"
-        maxlength="10"
-      >
+      <div class="form-group">
+        <input
+          type="text"
+          name="gravation"
+          id="gravation"
+          class="size-input form-control"
+          placeholder="write 10 characters max"
+          minlength="3"
+          maxlength="10"
+          required
+        >
+      </div>
 
       <div class="product-img">
         <img
@@ -293,34 +306,38 @@
 
       <h2>5. Anything else you want to add?</h2>
 
-      <textarea
-        name="message"
-        id="message"
-        class="textarea"
-        cols=""
-        rows=""
-      ></textarea>
+      <div class="form-group">
+        <textarea
+          name="message"
+          id="message"
+          class="textarea form-control"
+          cols=""
+          rows=""
+        ></textarea>
+      </div>
 
       <h2>6. Provide us an email to get back to you</h2>
-      <input
-        type="email"
-        name="email"
-        id="email"
-        class="email-input"
-        placeholder="Email"
-        required
-      >
+      <div class="form-group">
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="email-input form-control"
+          placeholder="Email"
+          required
+        >
+      </div>
 
       <section class="submit-input">
-        <div class="pretty p-default p-round mb-4">
-          <input
-            class="checkbox"
-            type="checkbox"
-            name="terms"
-            id="terms"
-            checked
-          > <span class="checkbox-custom"></span>
-          <div class="state">
+        <div class="p-default p-round mb-4">
+          <div class="form-group">
+            <input
+              class="form-control"
+              type="checkbox"
+              name="terms"
+              id="terms"
+              required
+            >
             <label
               for="terms"
               class="labels"
@@ -333,15 +350,14 @@
           </div>
         </div>
 
-        <div class="pretty p-default p-round mt-4">
-          <input
-            class="checkbox"
-            type="checkbox"
-            name="news"
-            id="news"
-          > <span class="checkbox-custom"></span>
-
-          <div class="state">
+        <div class="p-default p-round mt-4">
+          <div class="form-group">
+            <input
+              class="form-control"
+              type="checkbox"
+              name="news"
+              id="news"
+            >
             <label
               for="news"
               class="labels"
