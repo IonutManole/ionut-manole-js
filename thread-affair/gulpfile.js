@@ -40,10 +40,10 @@ gulp.task('sass', function () {
 
 gulp.task('js', function () {
   return gulp
-    .src(['./js/**/*.js'])
+    .src(['./node_modules/@glidejs/glide/dist/glide.js', './js/**/*.js'])
     .pipe(
       eslint({
-        useEslintrc: true,
+        useEslintrc: false,
         configFile: './config/.eslintrc',
       }),
     )
